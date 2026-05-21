@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy City Catering | Charleston, SC Event Catering</title>
+  <meta name="description" content="Holy City Catering brings Lowcountry flavor to weddings, corporate events, private parties, and more across Charleston, SC. Fresh, seasonal menus crafted for every occasion." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f7f3ec;
+      --bone:  #ede8df;
+      --sage:  #7a8c6e;
+      --sage-dark: #5c6b52;
+      --rust:  #b85c3a;
+      --rust-light: #cc7a5a;
+      --charcoal: #2a2a2a;
+      --mid: #5a5a5a;
+      --light-text: #8a8a8a;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Jost', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    .navbar {
+      background: var(--cream);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      padding: 1.2rem 0;
+    }
+    .navbar-brand {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--charcoal) !important;
+      letter-spacing: .02em;
+    }
+    .navbar-brand span { color: var(--rust); }
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mid) !important;
+      padding: .5rem 1rem !important;
+      transition: color .2s;
+    }
+    .nav-link:hover { color: var(--rust) !important; }
+    .btn-nav {
+      background: var(--rust);
+      color: #fff !important;
+      border-radius: 0;
+      padding: .5rem 1.4rem !important;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: background .2s;
+    }
+    .btn-nav:hover { background: var(--rust-light) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 92vh;
+      background:
+        linear-gradient(to bottom, rgba(247,243,236,.18) 0%, rgba(247,243,236,.72) 60%, var(--cream) 100%),
+        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1800&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(122,140,110,.12) 0%, transparent 70%);
+    }
+    .hero-eyebrow {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--sage);
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--charcoal);
+      margin-bottom: 1.6rem;
+    }
+    .hero h1 em { color: var(--rust); font-style: italic; }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 480px;
+      margin-bottom: 2.4rem;
+    }
+    .btn-primary-hcc {
+      display: inline-block;
+      background: var(--rust);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.2rem;
+      border-radius: 0;
+      transition: background .25s, transform .2s;
+    }
+    .btn-primary-hcc:hover { background: var(--rust-light); color: #fff; transform: translateY(-2px); }
+    .btn-outline-hcc {
+      display: inline-block;
+      background: transparent;
+      color: var(--charcoal);
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: .98rem 2rem;
+      border: 1px solid rgba(0,0,0,.25);
+      border-radius: 0;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline-hcc:hover { border-color: var(--rust); color: var(--rust); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--charcoal);
+      padding: 1.4rem 0;
+    }
+    .trust-bar p {
+      color: rgba(255,255,255,.55);
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .trust-bar .item {
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .trust-bar .item i { color: var(--sage); font-size: .9rem; }
+
+    /* ── SECTION LABELS ── */
+    .sec-eyebrow {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: .8rem;
+    }
+    .sec-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--charcoal);
+    }
+    .sec-title em { font-style: italic; color: var(--rust); }
+    .divider-leaf {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+    .divider-leaf span { width: 40px; height: 1px; background: var(--sage); opacity: .5; }
+    .divider-leaf i { color: var(--sage); font-size: 1rem; }
+
+    /* ── ABOUT ── */
+    .about-section { padding: 7rem 0; }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 160px;
+      height: 160px;
+      background: var(--sage);
+      opacity: .15;
+      z-index: 0;
+    }
+    .about-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: -1.5rem;
+      background: var(--rust);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1.2rem 1.6rem;
+      text-align: center;
+      line-height: 1.2;
+      z-index: 2;
+    }
+    .about-badge strong { display: block; font-size: 2.2rem; font-weight: 400; }
+    .about-body p { font-size: .97rem; color: var(--mid); margin-bottom: 1rem; }
+
+    /* ── SERVICES ── */
+    .services-section {
+      background: var(--charcoal);
+      padding: 7rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .services-section::before {
+      content: 'CATERING';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-family: var(--font-display);
+      font-size: 22vw;
+      color: rgba(255,255,255,.025);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+    .services-section .sec-title { color: #fff; }
+    .services-section .sec-eyebrow { color: var(--sage); }
+    .service-card {
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 2.2rem 1.8rem;
+      transition: border-color .25s, transform .25s;
+      cursor: default;
+      height: 100%;
+    }
+    .service-card:hover { border-color: var(--rust); transform: translateY(-4px); }
+    .service-card .icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(184,92,58,.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+    .service-card .icon i { color: var(--rust-light); font-size: 1.2rem; }
+    .service-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: .6rem;
+    }
+    .service-card p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.65; margin: 0; }
+
+    /* ── MENU PREVIEW ── */
+    .menu-section { padding: 7rem 0; background: var(--bone); }
+    .menu-tab-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid rgba(0,0,0,.12);
+      margin-bottom: 2.4rem;
+      flex-wrap: wrap;
+    }
+    .menu-tab {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--light-text);
+      padding: .8rem 1.6rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+      background: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+    .menu-tab.active, .menu-tab:hover { color: var(--rust); border-bottom-color: var(--rust); }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 1rem 0;
+      border-bottom: 1px dotted rgba(0,0,0,.15);
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .menu-item-desc { font-size: .82rem; color: var(--light-text); margin-top: .1rem; }
+    .menu-item-price {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--rust);
+      white-space: nowrap;
+      padding-left: 1rem;
+    }
+
+    /* ── GALLERY ── */
+    .gallery-section { padding: 5rem 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 260px 260px;
+      gap: 6px;
+    }
+    .gallery-grid .g1 { grid-column: 1 / 3; grid-row: 1; }
+    .gallery-grid .g2 { grid-column: 3; grid-row: 1; }
+    .gallery-grid .g3 { grid-column: 4; grid-row: 1; }
+    .gallery-grid .g4 { grid-column: 1; grid-row: 2; }
+    .gallery-grid .g5 { grid-column: 2; grid-row: 2; }
+    .gallery-grid .g6 { grid-column: 3 / 5; grid-row: 2; }
+    .gallery-grid > div {
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-grid > div img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .gallery-grid > div:hover img { transform: scale(1.04); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      background: var(--sage);
+      padding: 6rem 0;
+    }
+    .testimonials-section .sec-title { color: #fff; }
+    .testimonials-section .sec-eyebrow { color: rgba(255,255,255,.6); }
+    .testimonials-section .divider-leaf span { background: rgba(255,255,255,.4); }
+    .testimonials-section .divider-leaf i { color: rgba(255,255,255,.6); }
+    .review-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 2rem;
+      height: 100%;
+    }
+    .review-card .stars { color: #f0d060; font-size: .85rem; margin-bottom: 1rem; letter-spacing: .05em; }
+    .review-card blockquote {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(255,255,255,.9);
+      line-height: 1.55;
+      margin: 0 0 1.2rem;
+    }
+    .review-card cite {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+    }
+
+    /* ── CTA BAND ── */
+    .cta-section {
+      background:
+        linear-gradient(to right, rgba(247,243,236,.96) 0%, rgba(247,243,236,.85) 50%, rgba(247,243,236,.6) 100%),
+        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80') center/cover no-repeat;
+      padding: 7rem 0;
+      text-align: center;
+    }
+    .cta-section .sec-title { margin-bottom: 1rem; }
+    .cta-section p { color: var(--mid); margin-bottom: 2rem; font-size: .97rem; }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--charcoal);
+      padding: 6rem 0;
+    }
+    .contact-section .sec-title { color: #fff; }
+    .contact-section .sec-eyebrow { color: var(--sage); }
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.6rem;
+    }
+    .contact-detail .icon {
+      color: var(--sage);
+      font-size: 1.1rem;
+      margin-top: .2rem;
+    }
+    .contact-detail p { color: rgba(255,255,255,.6); font-size: .9rem; margin: 0; }
+    .contact-detail strong { color: #fff; font-weight: 500; display: block; }
+    .form-control-hcc {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 0;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: .9rem;
+      padding: .85rem 1.1rem;
+      width: 100%;
+      margin-bottom: 0;
+      transition: border-color .2s, background .2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+    .form-control-hcc::placeholder { color: rgba(255,255,255,.3); }
+    .form-control-hcc:focus { outline: none; border-color: var(--sage); background: rgba(255,255,255,.09); }
+    .form-control-hcc.is-invalid { border-color: var(--rust) !important; }
+    .form-select-hcc {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='rgba(255,255,255,0.4)' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 10px;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-select-hcc option { background: #2a2a2a; color: #fff; }
+    .form-label-hcc {
+      display: block;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-bottom: .45rem;
+    }
+    .form-label-hcc .req { color: var(--rust-light); }
+    .field-error {
+      font-size: .75rem;
+      color: #f4a68a;
+      margin-top: .3rem;
+      min-height: 1rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1c1c1c;
+      padding: 3rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .footer-brand span { color: var(--rust); }
+    footer p, footer a {
+      font-size: .8rem;
+      color: rgba(255,255,255,.35);
+      text-decoration: none;
+      line-height: 1.9;
+    }
+    footer a:hover { color: var(--sage); }
+    .footer-heading {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: .8rem;
+    }
+    .footer-divider {
+      border-top: 1px solid rgba(255,255,255,.07);
+      margin: 2rem 0 1.4rem;
+    }
+    .footer-bottom {
+      font-size: .72rem;
+      color: rgba(255,255,255,.2);
+    }
+    .partner-link {
+      font-size: .72rem;
+      color: rgba(255,255,255,.25);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding-bottom: 1px;
+      transition: color .2s;
+    }
+    .partner-link:hover { color: rgba(255,255,255,.5); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 180px);
+      }
+      .gallery-grid .g1 { grid-column: 1 / 3; grid-row: 1; }
+      .gallery-grid .g2 { grid-column: 1; grid-row: 2; }
+      .gallery-grid .g3 { grid-column: 2; grid-row: 2; }
+      .gallery-grid .g4 { grid-column: 1; grid-row: 3; }
+      .gallery-grid .g5 { grid-column: 2; grid-row: 3; }
+      .gallery-grid .g6 { grid-column: 1 / 3; grid-row: 4; }
+      .about-badge { left: 0; }
+      .about-img-accent { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Holy City <span>Catering</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-center gap-1 me-3">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-nav">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="hero-eyebrow">Charleston, SC &mdash; Lowcountry Fine Catering</p>
+          <h1>
+            Flavor Rooted<br>in the <em>Holy City</em>
+          </h1>
+          <p>
+            From intimate dinner parties to landmark weddings, we bring
+            seasonal Lowcountry cooking — crafted with local ingredients and
+            genuine Southern hospitality — to every table we set.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn-primary-hcc">Request a Quote</a>
+            <a href="#menu" class="btn-outline-hcc">View Our Menus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="row justify-content-center text-center g-4">
+        <div class="col-6 col-md-3">
+          <div class="item justify-content-center"><i class="bi bi-award"></i> Licensed &amp; Insured</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="item justify-content-center"><i class="bi bi-people"></i> 10–500+ Guests</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="item justify-content-center"><i class="bi bi-geo-alt"></i> Tri-County Area</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="item justify-content-center"><i class="bi bi-star"></i> 5-Star Rated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="about-img-wrap">
+            <div class="about-img-accent"></div>
+            <div class="about-badge"><strong>15+</strong> Years Serving<br>Charleston</div>
+            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80" alt="Holy City Catering - Beautifully plated Lowcountry dish" />
+          </div>
+          <div class="row g-2 mt-2">
+            <div class="col-6">
+              <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Artisan charcuterie spread" style="width:100%;height:160px;object-fit:cover;" />
+            </div>
+            <div class="col-6">
+              <img src="https://images.unsplash.com/photo-1504718855392-c0f33b372e72?w=400&q=80" alt="Southern brunch table" style="width:100%;height:160px;object-fit:cover;" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-up">
+          <p class="sec-eyebrow">Our Story</p>
+          <h2 class="sec-title">Born from the <em>Lowcountry</em></h2>
+          <div class="divider-leaf">
+            <span></span>
+            <i class="bi bi-flower2"></i>
+            <span></span>
+          </div>
+          <div class="about-body">
+            <p>
+              Holy City Catering was founded right here in Charleston with a simple belief:
+              great food tastes better when it's connected to place. We partner with Lowcountry
+              farmers, fishermen, and makers to build menus that tell the story of the South Carolina
+              coast — from she-crab bisque to wood-smoked whole hog.
+            </p>
+            <p>
+              Whether you're planning a tented wedding reception on the marsh, a corporate
+              luncheon in the historic district, or a backyard birthday feast for 30, our team
+              handles every detail — from custom menu design to linen selection — so you can
+              enjoy the moment you've been planning.
+            </p>
+            <p>
+              We are fully licensed, insured, and ServSafe certified. Our kitchen is located
+              in Charleston and we serve Berkeley, Charleston, and Dorchester counties.
+            </p>
+          </div>
+          <a href="#contact" class="btn-primary-hcc mt-3 d-inline-block">Start Planning</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6">
+          <p class="sec-eyebrow">What We Do</p>
+          <h2 class="sec-title">Every Occasion,<br><em>Perfectly Fed</em></h2>
+          <div class="divider-leaf">
+            <span style="background:rgba(255,255,255,.3)"></span>
+            <i class="bi bi-flower2" style="color:rgba(255,255,255,.3)"></i>
+            <span style="background:rgba(255,255,255,.3)"></span>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-heart"></i></div>
+            <h4>Weddings &amp; Receptions</h4>
+            <p>Customized menus for rehearsal dinners, cocktail hours, plated receptions, and late-night bites. We coordinate with your venue and planner seamlessly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-building"></i></div>
+            <h4>Corporate Events</h4>
+            <p>Business luncheons, client appreciation dinners, conference catering, and company holiday parties — all delivered on time and on brand.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-stars"></i></div>
+            <h4>Private Parties</h4>
+            <p>Birthday celebrations, anniversary dinners, holiday gatherings, baby showers, and everything in between. Intimate or grand — we scale with your vision.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-fire"></i></div>
+            <h4>Lowcountry Boils</h4>
+            <p>The quintessential Lowcountry experience — shrimp, sausage, corn, and potatoes piled high on newspaper. Perfect for beach parties and backyard events.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-cup-hot"></i></div>
+            <h4>Brunch &amp; Breakfast</h4>
+            <p>Southern brunch spreads featuring biscuits, shrimp and grits, seasonal fruit displays, and mimosa stations. Weekend events done right.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="icon"><i class="bi bi-truck"></i></div>
+            <h4>Drop-Off Catering</h4>
+            <p>Ready-to-serve platters, family-style entrees, and buffet setups delivered to your location — ideal for smaller gatherings and office meals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU PREVIEW -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 fade-up">
+          <p class="sec-eyebrow">Sample Menus</p>
+          <h2 class="sec-title">Seasonal, Local,<br><em>Unforgettable</em></h2>
+          <div class="divider-leaf">
+            <span></span>
+            <i class="bi bi-flower2"></i>
+            <span></span>
+          </div>
+          <p style="color:var(--mid);font-size:.9rem;">All menus are customized to your event. Below is a sampling of our most popular offerings — contact us to build your perfect menu.</p>
+        </div>
+      </div>
+      <div class="menu-tab-nav mb-0">
+        <button class="menu-tab active" onclick="showTab('apps')">Appetizers</button>
+        <button class="menu-tab" onclick="showTab('entrees')">Entrées</button>
+        <button class="menu-tab" onclick="showTab('sides')">Sides &amp; Salads</button>
+        <button class="menu-tab" onclick="showTab('desserts')">Desserts</button>
+      </div>
+      <div class="row g-4 mt-1">
+        <div class="col-lg-6" id="tab-apps">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">She-Crab Bisque Shooters</div>
+              <div class="menu-item-desc">Blue crab, sherry cream, chive oil — passed hors d'oeuvre</div>
+            </div>
+            <div class="menu-item-price">MP</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Pimento Cheese Deviled Eggs</div>
+              <div class="menu-item-desc">Duke's mayo, smoked paprika, crispy prosciutto</div>
+            </div>
+            <div class="menu-item-price">$4/ea</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Lowcountry Shrimp Cocktail</div>
+              <div class="menu-item-desc">Local white shrimp, house cocktail &amp; comeback sauces</div>
+            </div>
+            <div class="menu-item-price">$6/ea</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Smoked Salmon Crostini</div>
+              <div class="menu-item-desc">Cream cheese, capers, red onion on grilled sourdough</div>
+            </div>
+            <div class="menu-item-price">$3.50/ea</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Fig &amp; Brie Flatbread</div>
+              <div class="menu-item-desc">Local honey, fresh fig jam, toasted walnuts, arugula</div>
+            </div>
+            <div class="menu-item-price">$28/tray</div>
+          </div>
+        </div>
+        <div class="col-lg-6" id="tab-entrees" style="display:none">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Wood-Smoked Whole Hog BBQ</div>
+              <div class="menu-item-desc">12-hour smoke, three house sauces, cornbread, slaw</div>
+            </div>
+            <div class="menu-item-price">MP</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Herb-Crusted Beef Tenderloin</div>
+              <div class="menu-item-desc">Rosemary au jus, horseradish cream, carved tableside</div>
+            </div>
+            <div class="menu-item-price">$42/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Pan-Seared Grouper</div>
+              <div class="menu-item-desc">Lemon beurre blanc, local corn succotash, fried capers</div>
+            </div>
+            <div class="menu-item-price">$38/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Lowcountry Shrimp &amp; Grits</div>
+              <div class="menu-item-desc">Adluh stone-ground grits, tasso gravy, andouille, scallions</div>
+            </div>
+            <div class="menu-item-price">$22/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Chicken &amp; Waffles Station</div>
+            <div class="menu-item-desc">Buttermilk fried chicken, house-made waffles, hot honey</div>
+            </div>
+            <div class="menu-item-price">$18/pp</div>
+          </div>
+        </div>
+        <div class="col-lg-6" id="tab-sides" style="display:none">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Hoppin' John</div>
+              <div class="menu-item-desc">Black-eyed peas, Carolina Gold rice, smoked ham hock</div>
+            </div>
+            <div class="menu-item-price">$8/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Collard Greens</div>
+              <div class="menu-item-desc">Slow-braised with smoked turkey, apple cider vinegar</div>
+            </div>
+            <div class="menu-item-price">$7/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Watermelon &amp; Feta Salad</div>
+              <div class="menu-item-desc">Mint, red onion, balsamic glaze, local micro greens</div>
+            </div>
+            <div class="menu-item-price">$9/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Charleston Red Rice</div>
+              <div class="menu-item-desc">Tomato-braised long grain, bell pepper, smoked sausage</div>
+            </div>
+            <div class="menu-item-price">$7/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Roasted Seasonal Vegetables</div>
+              <div class="menu-item-desc">Local farm produce, herb oil, sea salt</div>
+            </div>
+            <div class="menu-item-price">$8/pp</div>
+          </div>
+        </div>
+        <div class="col-lg-6" id="tab-desserts" style="display:none">
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Bourbon Peach Cobbler</div>
+              <div class="menu-item-desc">South Carolina peaches, brown sugar biscuit crust, vanilla bean ice cream</div>
+            </div>
+            <div class="menu-item-price">$10/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Praline Bread Pudding</div>
+              <div class="menu-item-desc">Brioche, caramel sauce, toasted pecans, whipped cream</div>
+            </div>
+            <div class="menu-item-price">$9/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Dessert Charcuterie Board</div>
+              <div class="menu-item-desc">Seasonal fruit, local chocolates, macarons, mini tarts</div>
+            </div>
+            <div class="menu-item-price">$14/pp</div>
+          </div>
+          <div class="menu-item">
+            <div>
+              <div class="menu-item-name">Key Lime Tarts</div>
+              <div class="menu-item-desc">Individual Florida key lime curd, shortbread shell, torched meringue</div>
+            </div>
+            <div class="menu-item-price">$5/ea</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="container-fluid px-3">
+      <div class="container mb-4">
+        <div class="row fade-up">
+          <div class="col-lg-6">
+            <p class="sec-eyebrow">The Experience</p>
+            <h2 class="sec-title">Seen at Our <em>Events</em></h2>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="g1"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=80" alt="Elegant wedding reception table setting" /></div>
+        <div class="g2"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&q=80" alt="Charcuterie and grazing board" /></div>
+        <div class="g3"><img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=500&q=80" alt="Fresh seafood Lowcountry boil" /></div>
+        <div class="g4"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&q=80" alt="Southern peach dessert" /></div>
+        <div class="g5"><img src="https://images.unsplash.com/photo-1504718855392-c0f33b372e72?w=500&q=80" alt="Southern brunch spread" /></div>
+        <div class="g6"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Charleston waterfront event venue" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-lg-6 fade-up">
+          <p class="sec-eyebrow">What Our Clients Say</p>
+          <h2 class="sec-title" style="color:#fff;">Five Stars<br><em style="color:rgba(255,255,255,.7)">Every Time</em></h2>
+          <div class="divider-leaf">
+            <span></span>
+            <i class="bi bi-flower2"></i>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Holy City Catering absolutely made our wedding. Every single guest told us it was the best food they'd ever had at a reception. The shrimp and grits alone were worth it."</blockquote>
+            <cite>— Ashley M., Wedding at Magnolia Plantation</cite>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Professional from start to finish. They worked within our corporate budget, suggested a beautiful menu, and executed flawlessly. Our team was blown away. We'll be booking again."</blockquote>
+            <cite>— David R., Director of Operations, Downtown Charleston</cite>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"From the tasting appointment to the last bite of peach cobbler, Holy City made our anniversary party feel like a five-star restaurant experience. Genuinely the best catering in Charleston."</blockquote>
+            <cite>— Jennifer &amp; Tom K., Isle of Palms Private Event</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 fade-up text-center">
+          <p class="sec-eyebrow">Ready to Get Started?</p>
+          <h2 class="sec-title">Let's Build Your<br><em>Perfect Menu</em></h2>
+          <div class="divider-leaf justify-content-center">
+            <span></span>
+            <i class="bi bi-flower2"></i>
+            <span></span>
+          </div>
+          <p>Every great event starts with a conversation. Tell us about your occasion, guest count, and vision — and we'll handle the rest.</p>
+          <a href="#contact" class="btn-primary-hcc">Request a Free Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Left: contact info -->
+        <div class="col-lg-5 fade-up">
+          <p class="sec-eyebrow">Get in Touch</p>
+          <h2 class="sec-title">Let's Talk <em>Food</em></h2>
+          <div class="divider-leaf" style="margin-top:1.4rem;">
+            <span style="background:rgba(255,255,255,.3)"></span>
+            <i class="bi bi-flower2" style="color:rgba(255,255,255,.3)"></i>
+            <span style="background:rgba(255,255,255,.3)"></span>
+          </div>
+          <div class="contact-detail">
+            <div class="icon"><i class="bi bi-telephone"></i></div>
+            <div>
+              <strong>(843) 555-0192</strong>
+              <p>Mon – Sat, 9am – 6pm</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon"><i class="bi bi-envelope"></i></div>
+            <div>
+              <strong>hello@holycitycatering.com</strong>
+              <p>We reply within 24 hours</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <strong>Charleston, South Carolina</strong>
+              <p>Serving the entire Lowcountry —<br>Charleston, Mount Pleasant, Summerville,<br>Folly Beach, Isle of Palms &amp; beyond</p>
+            </div>
+          </div>
+          <div class="contact-detail mt-4" style="border-top:1px solid rgba(255,255,255,.08);padding-top:1.4rem;">
+            <div class="icon"><i class="bi bi-clock"></i></div>
+            <div>
+              <strong>Response Time</strong>
+              <p>We respond to all inquiries within<br>one business day. For urgent requests<br>please call us directly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: FormSubmit form -->
+        <div class="col-lg-7 fade-up">
+
+          <!-- Form wrapper — hidden on success -->
+          <div id="hcc-form-wrap">
+            <form id="hcc-form" action="https://formsubmit.co/info@sweetpalmcoffee.com" method="POST" novalidate>
+
+              <!-- FormSubmit config -->
+              <input type="hidden" name="_subject" value="New Catering Inquiry — Holy City Catering" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="" />
+              <!-- Honeypot anti-spam -->
+              <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Full Name <span class="req">*</span></label>
+                  <input class="form-control-hcc" type="text" name="name" placeholder="Jane Smith" required />
+                  <div class="field-error" id="err-name"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Email Address <span class="req">*</span></label>
+                  <input class="form-control-hcc" type="email" name="email" placeholder="jane@example.com" required />
+                  <div class="field-error" id="err-email"></div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Phone Number</label>
+                  <input class="form-control-hcc" type="tel" name="phone" placeholder="(843) 555-0000" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Event Date</label>
+                  <input class="form-control-hcc" type="date" name="event_date" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Estimated Guest Count</label>
+                  <input class="form-control-hcc" type="number" name="guest_count" placeholder="e.g. 75" min="1" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-hcc">Event Type <span class="req">*</span></label>
+                  <select class="form-control-hcc form-select-hcc" name="event_type" required>
+                    <option value="" disabled selected>Select event type…</option>
+                    <option value="Wedding / Reception">Wedding / Reception</option>
+                    <option value="Corporate Event">Corporate Event</option>
+                    <option value="Private Party">Private Party</option>
+                    <option value="Lowcountry Boil">Lowcountry Boil</option>
+                    <option value="Brunch / Breakfast">Brunch / Breakfast</option>
+                    <option value="Drop-Off Catering">Drop-Off Catering</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <div class="field-error" id="err-event_type"></div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-hcc">Tell Us About Your Event <span class="req">*</span></label>
+                  <textarea class="form-control-hcc" name="message" rows="5" placeholder="Venue, theme, dietary needs, dream menu ideas, anything else we should know…" required></textarea>
+                  <div class="field-error" id="err-message"></div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-primary-hcc w-100" id="hcc-submit-btn" style="border:none;cursor:pointer;position:relative;overflow:hidden;">
+                    <span id="btn-label">Send My Inquiry</span>
+                    <span id="btn-spinner" style="display:none;">
+                      <span class="spinner-border spinner-border-sm me-2" role="status"></span> Sending…
+                    </span>
+                  </button>
+                </div>
+                <div class="col-12">
+                  <div id="hcc-form-error" style="display:none;background:rgba(184,92,58,.15);border:1px solid var(--rust);color:#f4a68a;padding:.9rem 1.1rem;font-size:.85rem;margin-top:.4rem;">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    <span id="hcc-error-msg">Something went wrong. Please try again or call us directly.</span>
+                  </div>
+                </div>
+              </div><!-- /row -->
+            </form>
+          </div><!-- /form-wrap -->
+
+          <!-- Success state — shown after submission -->
+          <div id="hcc-success" style="display:none;text-align:center;padding:3rem 2rem;">
+            <div style="width:64px;height:64px;background:rgba(122,140,110,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.4rem;">
+              <i class="bi bi-check-lg" style="color:var(--sage);font-size:2rem;"></i>
+            </div>
+            <h3 style="font-family:var(--font-display);font-size:2rem;font-weight:400;color:#fff;margin-bottom:.6rem;">We Got It — Thank You!</h3>
+            <p style="color:rgba(255,255,255,.55);font-size:.95rem;max-width:360px;margin:0 auto 1.8rem;">
+              Your inquiry has been sent. A member of our team will be in touch within one business day to start planning your event.
+            </p>
+            <a href="#" onclick="resetForm(); return false;" style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);text-decoration:none;border-bottom:1px solid rgba(122,140,110,.4);padding-bottom:2px;">
+              Submit another inquiry
+            </a>
+          </div>
+
+        </div><!-- /col -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand mb-3">Holy City <span>Catering</span></div>
+          <p>Lowcountry catering rooted in seasonal ingredients, Southern tradition, and genuine hospitality. Serving the Charleston, SC area since 2009.</p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" title="Instagram"><i class="bi bi-instagram" style="color:rgba(255,255,255,.4);font-size:1.1rem;"></i></a>
+            <a href="#" title="Facebook"><i class="bi bi-facebook" style="color:rgba(255,255,255,.4);font-size:1.1rem;"></i></a>
+            <a href="#" title="Pinterest"><i class="bi bi-pinterest" style="color:rgba(255,255,255,.4);font-size:1.1rem;"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="footer-heading">Company</p>
+          <a href="#about" class="d-block">About Us</a>
+          <a href="#services" class="d-block">Services</a>
+          <a href="#menu" class="d-block">Sample Menus</a>
+          <a href="#gallery" class="d-block">Gallery</a>
+          <a href="#contact" class="d-block">Contact</a>
+        </div>
+        <div class="col-6 col-lg-3">
+          <p class="footer-heading">Services</p>
+          <a href="#services" class="d-block">Wedding Catering</a>
+          <a href="#services" class="d-block">Corporate Events</a>
+          <a href="#services" class="d-block">Private Parties</a>
+          <a href="#services" class="d-block">Lowcountry Boils</a>
+          <a href="#services" class="d-block">Drop-Off Catering</a>
+        </div>
+        <div class="col-lg-3">
+          <p class="footer-heading">Contact</p>
+          <a href="mailto:hello@holycitycatering.com" class="d-block">hello@holycitycatering.com</a>
+          <p style="margin-top:.6rem;font-size:.8rem;color:rgba(255,255,255,.25);line-height:1.6;">We respond to all inquiries<br>within one business day.</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="footer-bottom">&copy; 2025 Holy City Catering, LLC. All rights reserved. Charleston, SC.</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-2 mt-md-0">
+          <p class="footer-bottom">
+            Full-service event planning available through our partner &mdash;
+            <a href="https://sweetpalmevents.com" class="partner-link" target="_blank" rel="noopener">Sweet Palm Events</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ── Menu tabs ──────────────────────────────────────────────
+    function showTab(tab) {
+      ['apps','entrees','sides','desserts'].forEach(t => {
+        const el = document.getElementById('tab-' + t);
+        if (el) el.style.display = 'none';
+      });
+      document.querySelectorAll('.menu-tab').forEach(btn => btn.classList.remove('active'));
+      const target = document.getElementById('tab-' + tab);
+      if (target) target.style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+
+    // ── Scroll fade-up ────────────────────────────────────────
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => obs.observe(el));
+
+    // ── FormSubmit contact form ──────────────────────────────
+    const form       = document.getElementById('hcc-form');
+    const formWrap   = document.getElementById('hcc-form-wrap');
+    const successBox = document.getElementById('hcc-success');
+    const submitBtn  = document.getElementById('hcc-submit-btn');
+    const btnLabel   = document.getElementById('btn-label');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const formError  = document.getElementById('hcc-form-error');
+    const errorMsg   = document.getElementById('hcc-error-msg');
+
+    const requiredFields = ['name', 'email', 'event_type', 'message'];
+
+    function validateField(name, value) {
+      const errEl = document.getElementById('err-' + name);
+      if (!errEl) return true;
+      let msg = '';
+      if (!value.trim()) {
+        msg = name === 'name'       ? 'Please enter your name.'
+            : name === 'email'      ? 'Please enter your email.'
+            : name === 'event_type' ? 'Please select an event type.'
+            : 'Please tell us about your event.';
+      } else if (name === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+        msg = 'Please enter a valid email address.';
+      }
+      errEl.textContent = msg;
+      const input = form.querySelector(`[name="${name}"]`);
+      if (input) input.classList.toggle('is-invalid', !!msg);
+      return !msg;
+    }
+
+    function validateAll() {
+      return requiredFields.map(f => {
+        const el = form.querySelector(`[name="${f}"]`);
+        return el ? validateField(f, el.value) : true;
+      }).every(Boolean);
+    }
+
+    // Inline validation on blur
+    requiredFields.forEach(name => {
+      const el = form.querySelector(`[name="${name}"]`);
+      if (el) el.addEventListener('blur', () => validateField(name, el.value));
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      formError.style.display = 'none';
+
+      if (!validateAll()) return;
+
+      // Show spinner
+      btnLabel.style.display   = 'none';
+      btnSpinner.style.display = 'inline';
+      submitBtn.disabled = true;
+
+      try {
+        const res = await fetch('https://formsubmit.co/info@sweetpalmcoffee.com', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (res.ok) {
+          formWrap.style.display   = 'none';
+          successBox.style.display = 'block';
+        } else {
+          throw new Error('Submission failed. Please try again.');
+        }
+      } catch (err) {
+        errorMsg.textContent = err.message || 'Something went wrong. Please call us directly.';
+        formError.style.display  = 'block';
+        btnLabel.style.display   = 'inline';
+        btnSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+      }
+    });
+
+    function resetForm() {
+      form.reset();
+      requiredFields.forEach(name => {
+        const errEl = document.getElementById('err-' + name);
+        if (errEl) errEl.textContent = '';
+        const el = form.querySelector(`[name="${name}"]`);
+        if (el) el.classList.remove('is-invalid');
+      });
+      formError.style.display  = 'none';
+      btnLabel.style.display   = 'inline';
+      btnSpinner.style.display = 'none';
+      submitBtn.disabled = false;
+      formWrap.style.display   = 'block';
+      successBox.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
